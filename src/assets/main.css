@@ -18,6 +18,10 @@
     margin: 0 auto;
   }
 
+  .none {
+    display: none;
+  }
+
   .input {
     @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
   }

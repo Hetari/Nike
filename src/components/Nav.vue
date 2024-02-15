@@ -1,48 +1,54 @@
 <template>
   <header
-    class="padding-x py-8 z-10 w-full"
+    class="padding-x py-8 z-10 w-full relative"
     :class="{
-      'relative h-[100svh]': isVisible,
+      ' h-[100svh]': isVisible,
     }"
   >
-    <nav
-      class="flex justify-between items-center max-container"
-      :class="{
-        'flex-col': isVisible,
-      }"
-    >
+    <nav class="flex justify-between items-center max-container">
       <a
         href="/"
         :class="{
-          'w-full justify-start': isVisible,
+          'w-full justify-start pt-[10.5px]': isVisible,
         }"
       >
         <img :src="headerLogo" alt="Logo" width="130" height="29" />
       </a>
+      <div
+        class="cursor-pointer p-5 -m-5"
+        :class="{
+          'none max-lg:block': !isVisible,
+        }"
+        @click="toggleNav"
+      >
+        <img
+          :src="hamburger"
+          alt="Hamburger"
+          width="50"
+          height="50"
+          v-if="!isVisible"
+        />
+        <img
+          :src="closeHamburger"
+          alt="Hamburger"
+          width="50"
+          height="50"
+          v-if="isVisible"
+        />
+      </div>
 
       <ul
         class="flex flex-1 justify-center items-center gap-16"
         :class="{
-          'flex-col absolute top-8 right-8 gap-8': isVisible,
+          'flex-col justify-between absolute top-24 right-16 gap-8 ': isVisible,
           'max-lg:hidden': !isVisible,
         }"
       >
-        <div class="flex justify-end w-full">
-          <img
-            :src="closeHamburger"
-            alt="Hamburger"
-            width="50"
-            height="50"
-            class="cursor-pointer"
-            v-if="isVisible"
-            @click="toggleNav"
-          />
-        </div>
         <li
           v-for="navLink in navLinks"
           :key="navLink.label"
           :class="{
-            'w-full text-end': isVisible,
+            'w-full  text-end': isVisible,
           }"
         >
           <a
@@ -54,18 +60,6 @@
       </ul>
 
       <!-- </div> -->
-      <div
-        class="hidden max-lg:block cursor-pointer p-5 -m-5"
-        @click="toggleNav"
-      >
-        <img
-          :src="hamburger"
-          alt="Hamburger"
-          width="50"
-          height="50"
-          v-if="!isVisible"
-        />
-      </div>
     </nav>
   </header>
   <!-- <div>
