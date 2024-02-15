@@ -9,7 +9,7 @@
       <a
         href="/"
         :class="{
-          'w-full justify-start pt-[10.5px]': isVisible,
+          'w-full justify-start pt-[3.5px]': isVisible,
         }"
       >
         <img :src="headerLogo" alt="Logo" width="130" height="29" />
@@ -40,20 +40,23 @@
       <ul
         class="flex flex-1 justify-center items-center gap-16"
         :class="{
-          'flex-col justify-between absolute top-24 right-16 gap-8 ': isVisible,
+          'flex-col justify-between absolute top-24 right-10  gap-4 ':
+            isVisible,
           'max-lg:hidden': !isVisible,
         }"
       >
         <li
           v-for="navLink in navLinks"
           :key="navLink.label"
+          class="rounded text-center hover:bg-[#FF6452] group transition-all"
           :class="{
-            'w-full  text-end': isVisible,
+            'w-[85vw] text-end': isVisible,
           }"
         >
           <a
             :href="navLink.href"
-            class="font-montserrat leading-normal text-lg text-slate-gray"
+            class="font-montserrat leading-normal text-lg text-slate-gray group-hover:text-white py-3 px-5"
+            :class="{ 'ps-0 pe-5': isVisible }"
             >{{ navLink.label }}</a
           >
         </li>
