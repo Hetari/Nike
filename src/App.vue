@@ -30,5 +30,5 @@ import {
   SpacialOffer,
   Subscribe,
   SuperQuality,
-} from "@/components";
+} from "@/sections";
 </script>
