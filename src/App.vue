@@ -20,7 +20,6 @@
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
 import {
   Nav,
   Hero,

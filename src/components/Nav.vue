@@ -1,8 +1,8 @@
 <template>
   <header
-    class="padding-x py-8 z-10 w-full relative"
+    class="padding-x py-8 z-10 w-full absolute inset-0"
     :class="{
-      ' h-[100svh]': isVisible,
+      ' h-[100svh] relative': isVisible,
     }"
   >
     <nav class="flex justify-between items-center max-container">
@@ -48,7 +48,7 @@
         <li
           v-for="navLink in navLinks"
           :key="navLink.label"
-          class="rounded text-center hover:bg-[#FF6452] group transition-all"
+          class="rounded text-center hover:bg-coral-red group transition-all"
           :class="{
             'w-[85vw] text-end': isVisible,
           }"
@@ -61,13 +61,8 @@
           >
         </li>
       </ul>
-
-      <!-- </div> -->
     </nav>
   </header>
-  <!-- <div>
-    <RouterView />
-  </div> -->
 </template>
 
 <script setup>
