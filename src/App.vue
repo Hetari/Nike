@@ -1,7 +1,9 @@
 <template>
   <main class="relative">
     <Nav />
-    <section class="xl:padding-1 wide:padding-r padding-b"><Hero /></section>
+    <section class="xl:padding-1 wide:padding-r padding-b">
+      <Hero />
+    </section>
 
     <section class="padding"><PopularProducts /></section>
 

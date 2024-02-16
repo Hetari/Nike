@@ -1,6 +1,6 @@
 <template>
   <header
-    class="padding-x py-8 z-10 w-full absolute inset-0"
+    class="padding-x py-8 w-full absolute inset-0 z-10"
     :class="{
       ' h-[100svh] relative': isVisible,
     }"
