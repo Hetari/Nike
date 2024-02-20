@@ -1,7 +1,11 @@
 <template>
   <!-- relative overflow-hidden shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:text-coral-red before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 -->
   <button
-    class="cursor-pointer flex justify-center items-center gap-2 px-7 py-4 border border-coral-red font-montserrat text-lg rounded-full bg-coral-red text-white"
+    class="cursor-pointer flex justify-center items-center gap-2 px-7 py-4 border border-coral-red font-montserrat text-lg rounded-full bg-coral-red"
+    :class="{
+      'border-slate-gray bg-white text-slate-gray': outline,
+      'text-white': !outline,
+    }"
   >
     {{ label }}
     <img
@@ -21,6 +25,11 @@ const props = defineProps({
   },
   iconURL: {
     type: String,
+    required: false,
+  },
+  outline: {
+    type: Boolean,
+    default: false,
     required: false,
   },
 });
