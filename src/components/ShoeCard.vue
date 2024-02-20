@@ -2,21 +2,15 @@
   <div>
     <div
       class="border-2 rounded-xl cursor-pointer max-sm:flex-2"
-      :class="{ 'border-coral-red': bigShoeImage === imgURL.bigShoe }"
+      :class="{ 'border-coral-red': isHero && bigShoeImage === imgURL.bigShoe }"
       @click="handleClick(imgURL.bigShoe)"
     >
-      <div
-        class="flex justify-center items-center bg-card bg-center bg-cover sm:w-40 sm:h-40 max-sm:p-4"
-      >
-        <img
-          :src="imgURL.thumbnail"
-          alt="shoe collection"
-          width="127"
-          height="103"
-          class="grayscale"
-          :class="{ 'grayscale-0': bigShoeImage === imgURL.bigShoe }"
-        />
-      </div>
+      <ImageThumbnail
+        :thumbnail="imgURL.thumbnail"
+        :imgURL="imgURL"
+        :bigShoeImage="bigShoeImage"
+        :isHero="isHero"
+      />
     </div>
   </div>
 </template>
@@ -32,7 +26,14 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  isHero: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
 });
+
+import ImageThumbnail from "./ImageThumbnail.vue";
 
 const emit = defineEmits(["changeBigShoeImage"]);
 
