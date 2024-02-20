@@ -1,7 +1,7 @@
 <template>
   <section
     id="home"
-    class="padding-x w-full flex flex-col xl:flex-row gap-10 justify-center min-h-screen max-container"
+    class="w-full flex flex-col xl:flex-row gap-10 justify-center min-h-screen max-container"
   >
     <div
       class="relative w-full xl:w-2/5 flex flex-col justify-center items-start max-xl:padding-x pt-28 z-20 max-lg:pt-44"
