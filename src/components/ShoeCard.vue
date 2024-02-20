@@ -13,6 +13,8 @@
           alt="shoe collection"
           width="127"
           height="103"
+          class="grayscale"
+          :class="{ 'grayscale-0': bigShoeImage === imgURL.bigShoe }"
         />
       </div>
     </div>
