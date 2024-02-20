@@ -31,7 +31,13 @@
 
       <div class="flex justify-start items-start flex-wrap w-full mt-20 gap-16">
         <div v-for="stat in statistics" :key="stat.id">
-          <p class="text-4xl font-palanquin font-bold">{{ stat.value }}</p>
+          <p
+            id="count"
+            :data-counter="stat.value"
+            class="text-4xl font-palanquin font-bold"
+          >
+            0
+          </p>
           <p class="leading-7 font-montserrat text-slate-gray">
             {{ stat.label }}
           </p>
@@ -69,7 +75,7 @@ import { btn, ShoeCard } from "@/components";
 import { arrowRight } from "@/assets/icons";
 import { statistics, shoes } from "@/constants";
 import { bigShoe1 } from "@/assets/images";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 let currentShoe = ref(bigShoe1); // Initialize currentShoe as a ref
 let shoeHero = ref(null); // Define the ref for the image element
@@ -86,4 +92,74 @@ function updateShoeImage() {
     imgElement.src = currentShoe.value; // Update the src attribute
   }
 }
+
+const formatNumber = (num) => {
+  // Suffixes for thousands, millions, billions, trillions, etc.
+  const suffixes = ["", "K", "M", "B", "T"];
+
+  // Determine the magnitude (which suffix to use)
+  let magnitude = Math.floor(Math.log10(Math.abs(num)) / 3);
+
+  // Ensure we don't go beyond available suffixes
+  magnitude = Math.min(magnitude, suffixes.length - 1);
+
+  // Adjust number to appropriate magnitude
+  const rounded = num / Math.pow(10, magnitude * 3);
+
+  // Return formatted number with appropriate suffix
+  return rounded.toFixed(1) + suffixes[magnitude];
+};
+
+// https://stackoverflow.com/questions/70746105/animate-counter-from-start-to-end-value#answer-70746179
+const counter = (EL) => {
+  // Animate all counters equally for a better UX
+  const duration = 2500;
+
+  // Get start and end values
+  const start = parseInt(EL.textContent, 10);
+
+  // PS: Use always the radix 10!
+  const end = parseInt(EL.dataset.counter, 10);
+  4;
+
+  // If equal values, stop here.
+  if (start === end) return;
+
+  // Get the range
+  const range = end - start;
+
+  // Set current at start position
+  let curr = start;
+
+  const timeStart = Date.now();
+
+  const loop = () => {
+    let elaps = Date.now() - timeStart;
+
+    // Stop the loop
+    if (elaps > duration) elaps = duration;
+
+    // Get the time fraction
+    const frac = elaps / duration;
+
+    // Calculate the value step
+    const step = frac * range;
+
+    // Increment or Decrement current value
+    curr = start + step;
+
+    // Apply to UI as integer
+    EL.textContent = formatNumber(Math.trunc(curr));
+
+    // Loop
+    if (elaps < duration) requestAnimationFrame(loop);
+  };
+
+  // Start the loop!
+  requestAnimationFrame(loop);
+};
+
+onMounted(() => {
+  document.querySelectorAll("[data-counter]").forEach(counter);
+});
 </script>
