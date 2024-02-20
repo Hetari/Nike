@@ -12,6 +12,11 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --a: 8deg;
+}
+
+
 @layer components {
   .max-container {
     max-width: 1440px;
@@ -23,17 +28,26 @@
   }
 
   .img-hover {
-    --a: 8deg;
     /* control the angle of rotation (the smaller, the better) */
     aspect-ratio: 1;
     transform: perspective(400px) rotate3d(var(--r, 1, -1), 0, calc(var(--i, 1) * var(--a)));
-    mask: linear-gradient(135deg, #000c 40%, #000, #000c 60%) 100% 100%/250% 250%;
+    mask: linear-gradient(135deg, #000c 40%, #000, #000 60%) 100% 100%/250% 250%;
     transition: 0.7s;
   }
 
   .img-hover:hover {
-    --i: -1;
+    --i: -2;
     mask-position: 0 0;
+  }
+
+  .alt {
+    --r: 1, 10;
+    mask:
+      linear-gradient(45deg, #000 40%, #000, #000c 60%) 0 100%/250% 250%;
+  }
+
+  .alt:hover {
+    mask-position: 100% 0;
   }
 
   .input {

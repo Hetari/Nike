@@ -35,6 +35,7 @@
             id="count"
             :data-counter="stat.value"
             class="text-4xl font-palanquin font-bold"
+            style="width: 100px"
           >
             0
           </p>
@@ -58,7 +59,7 @@
       <div
         class="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6 z-10"
       >
-        <div v-for="shoe in shoes" :key="shoe.id">
+        <div class="img-hover odd:alt" v-for="shoe in shoes" :key="shoe.id">
           <ShoeCard
             :imgURL="shoe"
             :bigShoeImage="currentShoe"
