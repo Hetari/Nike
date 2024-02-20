@@ -5,6 +5,7 @@
     :class="{
       'border-slate-gray bg-white text-slate-gray': outline,
       'text-white': !outline,
+      'w-full': fullWidth,
     }"
   >
     {{ label }}
@@ -28,6 +29,11 @@ const props = defineProps({
     required: false,
   },
   outline: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
+  fullWidth: {
     type: Boolean,
     default: false,
     required: false,
