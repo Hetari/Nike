@@ -1,6 +1,6 @@
 <template>
   <header
-    class="padding-x py-8 w-full absolute inset-0 z-10"
+    class="padding-x py-8 w-full absolute inset-0"
     :class="{
       ' h-[100svh] relative': isVisible,
     }"
@@ -8,6 +8,7 @@
     <nav class="flex justify-between items-center max-container">
       <a
         href="/"
+        class="z-50"
         :class="{
           'w-full justify-start pt-[3.5px]': isVisible,
         }"
@@ -15,7 +16,7 @@
         <img :src="headerLogo" alt="Logo" width="130" height="29" />
       </a>
       <div
-        class="cursor-pointer p-5 -m-5"
+        class="cursor-pointer p-5 -m-5 z-50"
         :class="{
           'none max-lg:block': !isVisible,
         }"
