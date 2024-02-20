@@ -1,6 +1,6 @@
 <template>
   <header
-    class="padding-x py-8 w-full absolute inset-0"
+    class="padding-x py-8 w-full absolute inset-0 h-screen"
     :class="{
       ' h-[100svh] relative': isVisible,
     }"
@@ -39,7 +39,7 @@
       </div>
 
       <ul
-        class="flex flex-1 justify-center items-center gap-16"
+        class="flex flex-1 justify-center items-center gap-16 z-50"
         :class="{
           'flex-col justify-between absolute top-24 right-10  gap-4 ':
             isVisible,

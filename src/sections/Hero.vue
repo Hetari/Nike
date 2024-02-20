@@ -62,6 +62,7 @@
           <ShoeCard
             :imgURL="shoe"
             :bigShoeImage="currentShoe"
+            :isHero="true"
             @changeBigShoeImage="changeBigShoeImage"
           />
         </div>
