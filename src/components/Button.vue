@@ -5,6 +5,7 @@
   >
     {{ label }}
     <img
+      v-if="iconURL"
       :src="iconURL"
       alt="arrow right icon"
       class="ml-2 rounded-full w-5 h-5"
@@ -20,7 +21,7 @@ const props = defineProps({
   },
   iconURL: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 </script>
