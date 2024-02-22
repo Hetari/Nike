@@ -28,8 +28,16 @@
       </p>
 
       <btn label="Shop Now" :iconURL="arrowRight" />
-
-      <div class="flex justify-start items-start flex-wrap w-full mt-20 gap-16">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div
+        class="flex justify-start items-start flex-wrap w-full mt-20 gap-16"
+        id="counts"
+      >
         <div v-for="stat in statistics" :key="stat.id">
           <p
             id="count"
@@ -162,6 +170,14 @@ const counter = (EL) => {
 };
 
 onMounted(() => {
+  preloadImages();
   document.querySelectorAll("[data-counter]").forEach(counter);
 });
+
+function preloadImages() {
+  for (let shoe of shoes) {
+    const img = new Image();
+    img.src = shoe;
+  }
+}
 </script>
