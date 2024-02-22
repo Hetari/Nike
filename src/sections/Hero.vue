@@ -85,7 +85,7 @@ import { btn, ShoeCard } from "@/components";
 import { arrowRight } from "@/assets/icons";
 import { statistics, shoes } from "@/constants";
 import { bigShoe1 } from "@/assets/images";
-import { onMounted, ref } from "vue";
+import { onMounted, onBeforeMount, ref } from "vue";
 
 let currentShoe = ref(bigShoe1); // Initialize currentShoe as a ref
 let shoeHero = ref(null); // Define the ref for the image element
@@ -169,15 +169,18 @@ const counter = (EL) => {
   requestAnimationFrame(loop);
 };
 
-onMounted(() => {
-  preloadImages();
-  document.querySelectorAll("[data-counter]").forEach(counter);
-});
-
 function preloadImages() {
   for (let shoe of shoes) {
     const img = new Image();
-    img.src = shoe;
+    img.src = shoe.bigShoe;
   }
 }
+
+onBeforeMount(() => {
+  preloadImages();
+});
+
+onMounted(() => {
+  document.querySelectorAll("[data-counter]").forEach(counter);
+});
 </script>
