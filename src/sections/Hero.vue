@@ -92,15 +92,6 @@ let shoeHero = ref(null); // Define the ref for the image element
 
 function changeBigShoeImage(val) {
   currentShoe.value = val;
-  updateShoeImage();
-}
-
-// Function to update the image source
-function updateShoeImage() {
-  const imgElement = ref.shoeHero; // Access the image element using the ref
-  if (imgElement) {
-    imgElement.src = currentShoe.value; // Update the src attribute
-  }
 }
 
 const formatNumber = (num) => {
@@ -172,7 +163,9 @@ const counter = (EL) => {
 function preloadImages() {
   for (let shoe of shoes) {
     const img = new Image();
+    console.log("shoe.bigShoe: ", shoe.bigShoe);
     img.src = shoe.bigShoe;
+    console.log("img.src: ", img.src);
   }
 }
 
