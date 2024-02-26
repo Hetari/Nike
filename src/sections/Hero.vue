@@ -4,50 +4,46 @@
     class="w-full flex flex-col xl:flex-row gap-10 justify-center min-h-screen max-container"
   >
     <div
-      class="relative w-full xl:w-2/5 flex flex-col justify-center items-start max-xl:padding-x pt-28 z-20 max-lg:pt-44"
+      class="relative w-full xl:w-2/5 flex flex-col justify-center items-start max-xl:padding-x pt-28 z-20 max-lg:pt-44 max-sm:pt-36"
     >
-      <p class="capitalize text-xl font-montserrat text-coral-red">
+      <p
+        class="capitalize text-xl max-sm:text-lg font-montserrat text-coral-red"
+      >
         our summer collections
       </p>
 
       <h1
-        class="capitalize mt-10 font-palanquin text-8xl font-bold max-sm:text-[72px] max-sm:leading-[82px]"
+        class="capitalize mt-10 font-palanquin text-8xl max-md:text-2xl font-bold max-sm:text-4xl max-sm:leading-1"
       >
-        <span class="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"
+        <span
+          class="inline-block xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"
           >the new arrival</span
         >
         <br />
-        <span class="text-coral-red inline-block mt-3">nike</span> shoes
+        <span class="text-coral-red inline-block">nike</span> shoes
       </h1>
 
-      <p
-        class="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm"
-      >
+      <p class="info-text mt-6 mb-14 sm:max-w-sm">
         Discover stylish Nike arrivals, quality comfort, and innovation for your
         active life.
       </p>
 
       <btn label="Shop Now" :iconURL="arrowRight" />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
       <div
-        class="flex justify-start items-start flex-wrap w-full mt-20 gap-16"
+        class="flex justify-start items-start flex-wrap w-full mt-20 gap-16 max-sm:gap-0"
         id="counts"
       >
         <div v-for="stat in statistics" :key="stat.id">
           <p
             id="count"
             :data-counter="stat.value"
-            class="text-4xl font-palanquin font-bold"
+            class="text-4xl font-palanquin font-bold max-sm:text-2xl"
             style="width: 100px"
           >
             0
           </p>
-          <p class="leading-7 font-montserrat text-slate-gray">
+          <p class="info-text">
             {{ stat.label }}
           </p>
         </div>

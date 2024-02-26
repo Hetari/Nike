@@ -3,7 +3,7 @@
     <img
       :src="review.imgURL"
       alt="customer profile image"
-      class="rounded-full object-contain w-[120px] h-[120px]"
+      class="rounded-full object-contain size-[120px]"
     />
     <p class="info-text mt-6 max-w-sm text-center">{{ review.feedback }}</p>
     <div class="mt-3 flex justify-center items-center gap-2.5">

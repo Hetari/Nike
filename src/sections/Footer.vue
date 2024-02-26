@@ -15,7 +15,7 @@
         </p>
         <div class="flex justify-start items-center gap-5 my-8">
           <div
-            class="flex justify-center items-center w-12 h-12 bg-white rounded-full"
+            class="flex justify-center items-center size-12 bg-white rounded-full"
             v-for="social in socialMedia"
             :key="social.id"
           >

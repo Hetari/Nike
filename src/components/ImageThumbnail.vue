@@ -1,7 +1,7 @@
 <template>
   <div
-    class="rounded-xl flex justify-start items-center bg-center bg-cover max-sm:p-4"
-    :class="{ 'bg-card sm:w-40 sm:h-40 justify-center': isHero }"
+    class="rounded-xl flex justify-start items-center bg-center bg-cover"
+    :class="{ ' bg-card sm:size-40 justify-center  ': isHero }"
   >
     <img
       :src="thumbnail"
