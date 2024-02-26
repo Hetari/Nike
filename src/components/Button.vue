@@ -1,20 +1,33 @@
 <template>
-  <!-- relative overflow-hidden shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white before:text-coral-red before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56 -->
   <button
-    class="cursor-pointer flex justify-center items-center gap-2 px-7 py-4 border border-coral-red font-montserrat text-lg rounded-full bg-coral-red"
+    class="cursor-pointer font-montserrat text-lg relative px-6 py-3 font-bold text-white group"
     :class="{
-      'border-slate-gray bg-white text-slate-gray': outline,
-      'text-white': !outline,
       'w-full': fullWidth,
     }"
   >
-    {{ label }}
-    <img
-      v-if="iconURL"
-      :src="iconURL"
-      alt="arrow right icon"
-      class="ml-2 rounded-full w-5 h-5"
-    />
+    <span
+      class="absolute inset-0 size-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 rounded-full"
+      :class="{
+        'bg-black ': outline,
+        ' bg-coral-red': !outline,
+      }"
+    ></span>
+    <span
+      class="absolute inset-0 w-full h-full border-[3px] rounded-full"
+      :class="{
+        'border-gray-400 ': outline,
+        'border-black ': !outline,
+      }"
+    ></span>
+    <span class="relative flex justify-center items-center gap-2">
+      {{ label }}
+      <img
+        v-if="iconURL"
+        :src="iconURL"
+        alt="arrow right icon"
+        class="ml-2 rounded-full w-5 h-5"
+      />
+    </span>
   </button>
 </template>
 
