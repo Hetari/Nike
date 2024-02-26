@@ -7,13 +7,11 @@
     </div>
 
     <div class="flex flex-1 flex-col">
-      <h2
-        class="capitalize mt-10 font-palanquin text-4xl font-bold lg:max-w-lg"
-      >
+      <h2 class="heading-title">
         <span class="text-coral-red">spacial</span> offer
       </h2>
 
-      <p class="mt-4 lg:max-w-lg info-text">
+      <p class="info-text">
         Embark on a shopping journey that redefines your experience with
         unbeatable deals. From premier selections to incredible savings, we
         offer unparalleled value that sets us apart.

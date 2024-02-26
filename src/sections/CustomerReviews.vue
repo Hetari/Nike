@@ -1,9 +1,9 @@
 <template>
   <section class="max-container">
-    <h3 class="font-palanquin text-center text-4xl font-bold capitalize">
+    <h3 class="heading-title">
       what our <span class="text-coral-red">customers</span> say?
     </h3>
-    <p className="info-text m-auto mt-4 max-w-lg text-center">
+    <p className="info-text m-auto mt-4 max-w-lg ">
       Hear genuine stories from our satisfied customers about their exceptional
       experiences with us.
     </p>

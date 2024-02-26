@@ -10,7 +10,7 @@
       :height="isHero ? 103 : 280"
       :class="{
         grayscale: isHero,
-        'grayscale-0': isHero && bigShoeImage === imgURL.bigShoe,
+        'grayscale-0 ': isHero && bigShoeImage === imgURL.bigShoe,
       }"
     />
   </div>

@@ -12,9 +12,7 @@
         our summer collections
       </p>
 
-      <h1
-        class="capitalize mt-10 font-palanquin text-8xl max-md:text-2xl font-bold max-sm:text-4xl max-sm:leading-1"
-      >
+      <h1 class="heading-title">
         <span
           class="inline-block xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"
           >the new arrival</span
@@ -28,7 +26,7 @@
         active life.
       </p>
 
-      <btn label="Shop Now" :iconURL="arrowRight" />
+      <btn label="Shop Now" :iconURL="arrowRight" link="#products" />
 
       <div
         class="flex justify-start items-start flex-wrap w-full mt-20 gap-16 max-sm:gap-0"

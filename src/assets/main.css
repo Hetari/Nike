@@ -85,6 +85,11 @@
   }
 
   .info-text {
-    @apply font-montserrat text-slate-gray text-lg leading-7 break-words;
+    @apply font-montserrat text-slate-gray text-lg leading-7 break-words max-sm:text-base max-sm:leading-7 mt-2 max-sm:mt-6;
   }
+
+  .heading-title {
+    @apply capitalize mt-10 font-palanquin text-8xl max-md:text-2xl font-bold max-sm:text-4xl max-sm:leading-none;
+  }
+
 }

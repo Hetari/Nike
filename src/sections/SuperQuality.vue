@@ -4,9 +4,7 @@
     class="flex justify-between items-center max-lg:flex-col gap-10 w-full max-container"
   >
     <div class="flex flex-1 flex-col">
-      <h2
-        class="capitalize mt-10 font-palanquin text-4xl font-bold lg:max-w-lg"
-      >
+      <h2 class="heading-title">
         we provide you <span class="text-coral-red">super</span>
         <span class="text-coral-red inline-block">quality</span> shoes
       </h2>

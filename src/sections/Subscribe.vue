@@ -3,7 +3,7 @@
     id="contact-us"
     class="max-container flex justify-between items-center max-lg:flex-col gap-8 max-sm:text-center"
   >
-    <h3 class="text-4xl leading-[68px] lg:max-w-lg font-palanquin font-bold">
+    <h3 class="heading-title">
       Sign Up for
       <span class="text-coral-red"> Updates </span> & Newsletter
     </h3>
