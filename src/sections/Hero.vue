@@ -155,30 +155,40 @@ const counter = (EL) => {
 };
 
 const preloadImages = () => {
-  const imagePromises = shoes.map((shoe) => {
-    return Promise.all([
-      // new Promise((resolve, reject) => {
-      //   const thumbnailImg = new Image();
-      //   thumbnailImg.onload = resolve;
-      //   thumbnailImg.onerror = reject;
-      //   thumbnailImg.src = shoe.thumbnail;
-      // }),
-      new Promise((resolve, reject) => {
-        const bigShoeImg = new Image();
-        bigShoeImg.onload = resolve;
-        bigShoeImg.onerror = reject;
-        bigShoeImg.src = shoe.bigShoe;
-      }),
-    ]);
-  });
+  return new Promise((resolve, reject) => {
+    const imagePromises = shoes.map((shoe) => {
+      return Promise.all([
+        new Promise((resolve, reject) => {
+          const thumbnailImg = new Image();
+          thumbnailImg.onload = resolve;
+          thumbnailImg.onerror = reject;
+          thumbnailImg.src = shoe.thumbnail;
+        }),
+        new Promise((resolve, reject) => {
+          const bigShoeImg = new Image();
+          bigShoeImg.onload = resolve;
+          bigShoeImg.onerror = reject;
+          bigShoeImg.src = shoe.bigShoe;
+        }),
+      ]);
+    });
 
-  Promise.all(imagePromises).catch((error) => {
-    console.error("Error preloading images:", error);
+    Promise.all(imagePromises.flat())
+      .then(() => {
+        resolve(); // Resolve the main promise when all images are preloaded
+      })
+      .catch((error) => {
+        reject(error); // Reject the main promise if there's an error
+      });
   });
 };
 
-onMounted(() => {
-  preloadImages();
-  document.querySelectorAll("[data-counter]").forEach(counter);
+onMounted(async () => {
+  try {
+    await preloadImages();
+    document.querySelectorAll("[data-counter]").forEach(counter);
+  } catch (error) {
+    console.error("Error:", error);
+  }
 });
 </script>
