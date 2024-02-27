@@ -14,6 +14,7 @@
         class="mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-14 sm:gap-4"
       >
         <PopularProductsCard
+          class="cursor-pointer"
           v-for="product in products"
           :key="product.id"
           :product="products[product.id]"

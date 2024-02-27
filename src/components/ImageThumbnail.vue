@@ -1,7 +1,10 @@
 <template>
   <div
     class="rounded-xl flex justify-start items-center bg-center bg-cover"
-    :class="{ ' bg-card sm:size-40 justify-center  ': isHero }"
+    :class="{
+      'bg-card sm:size-40 justify-center': isHero,
+      'transition-all duration-300 hover:scale-105': !isHero,
+    }"
   >
     <img
       :src="thumbnail"
@@ -9,7 +12,7 @@
       :width="isHero ? 127 : 280"
       :height="isHero ? 103 : 280"
       :class="{
-        grayscale: isHero,
+        'grayscale ': isHero,
         'grayscale-0 ': isHero && bigShoeImage === imgURL.bigShoe,
       }"
     />

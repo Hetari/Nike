@@ -3,7 +3,7 @@
     <h3 class="heading-title">
       what our <span class="text-coral-red">customers</span> say?
     </h3>
-    <p className="info-text m-auto mt-4 max-w-lg ">
+    <p className="info-text  mt-4 max-w-lg ">
       Hear genuine stories from our satisfied customers about their exceptional
       experiences with us.
     </p>

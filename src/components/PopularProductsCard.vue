@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-1 flex-col">
     <ImageThumbnail :thumbnail="product.imgURL" />
-    <div class="mt-8 flex justify-start gap-2.5 cursor-pointer">
+    <div class="mt-8 flex justify-start gap-2.5">
       <img :src="star" alt="rating" width="24" height="24" />
       <p class="font-montserrat text-xl leading-normal text-slate-gray">
         ({{ product.rating }})
