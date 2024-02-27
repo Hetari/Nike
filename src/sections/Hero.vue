@@ -154,7 +154,31 @@ const counter = (EL) => {
   requestAnimationFrame(loop);
 };
 
+const preloadImages = () => {
+  const imagePromises = shoes.map((shoe) => {
+    return Promise.all([
+      // new Promise((resolve, reject) => {
+      //   const thumbnailImg = new Image();
+      //   thumbnailImg.onload = resolve;
+      //   thumbnailImg.onerror = reject;
+      //   thumbnailImg.src = shoe.thumbnail;
+      // }),
+      new Promise((resolve, reject) => {
+        const bigShoeImg = new Image();
+        bigShoeImg.onload = resolve;
+        bigShoeImg.onerror = reject;
+        bigShoeImg.src = shoe.bigShoe;
+      }),
+    ]);
+  });
+
+  Promise.all(imagePromises).catch((error) => {
+    console.error("Error preloading images:", error);
+  });
+};
+
 onMounted(() => {
+  preloadImages();
   document.querySelectorAll("[data-counter]").forEach(counter);
 });
 </script>
